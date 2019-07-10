@@ -30,9 +30,9 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-
+// 用户相关
 Route::resource('users','UsersController',['only' => ['show','update','edit']]);
-
-
+// 话题相关
 Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+// 话题分类相关
 Route::resource('categories','CategoriesController',['only' => ['show']]);
