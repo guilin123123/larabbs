@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PageController@root')->name('root');
+Route::get('/', 'TopicsController@index')->name('root');
 
 //Auth::routes(); laravel auth路由 等同于以下
 // 用户身份验证相关的路由
