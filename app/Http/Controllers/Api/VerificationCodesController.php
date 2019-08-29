@@ -12,6 +12,7 @@ class VerificationCodesController extends Controller
     public function store(VerificationCodeRequest $request, EasySms $easySms)
     {
         $phone = $request->phone;
+        $a = 2;
 
         if (!app()->environment('production')) {
             $code = '1234';
@@ -28,7 +29,8 @@ class VerificationCodesController extends Controller
                 return $this->response->errorInternal($message ?: '短信发送异常');
             }
         }
-
+        $a = 1;
+        $b = 2;
         $key = 'verificationCode_' . str_random(15);
         $expiredAt = now()->addMinutes(10);
         // 缓存验证码 10分钟过期
